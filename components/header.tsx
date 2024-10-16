@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <header className="w-full">
       {/* Mobile Header */}
-      <div className="md:hidden bg-primary text-white p-4 flex justify-between items-center">
+      <div className="md:hidden bg-[#002165] text-white p-4 flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <button onClick={toggleMenu} aria-label="Toggle menu" className="p-1">
             {isMenuOpen ? <X size={40} strokeWidth={2.5} /> : <Menu size={40} strokeWidth={2.5} />}
@@ -50,7 +50,7 @@ export default function Header() {
             className="mx-auto"
           />
         </div>
-        <nav className="bg-primary text-white p-4">
+        <nav className="bg-[#002165] text-white p-4">
           <ul className="flex justify-center items-center space-x-6">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/about">About Us</Link></li>
@@ -78,7 +78,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-primary text-white p-4">
+        <div className="md:hidden bg-[#002165] text-white p-4">
           <nav>
             <ul className="space-y-4">
               <li><Link href="/" onClick={toggleMenu}>Home</Link></li>
