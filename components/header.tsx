@@ -21,9 +21,9 @@ export default function Header() {
 
   return (
     <header className="w-full">
-      {/* Mobile Header */}
-      <div className="md:hidden bg-[#002165] text-white p-4 flex justify-between items-center">
-        <div className="flex items-center space-x-4">
+      {/* Mobile and Tablet Header */}
+      <div className="2xl:hidden bg-[#002165] text-white py-1 px-4 flex justify-between items-center">
+        <div className="flex items-center space-x-2">
           <button onClick={toggleMenu} aria-label="Toggle menu" className="p-1">
             {isMenuOpen ? <X size={40} strokeWidth={2.5} /> : <Menu size={40} strokeWidth={2.5} />}
           </button>
@@ -40,7 +40,7 @@ export default function Header() {
       </div>
 
       {/* Desktop Header */}
-      <div className="hidden md:block">
+      <div className="hidden 2xl:block">
         <div className="bg-white py-8 px-6 flex justify-between items-center">
           <Image
             src="/logo.svg"
@@ -79,9 +79,9 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile and Tablet Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-[#002165] text-white p-4">
+        <div className="2xl:hidden bg-[#002165] text-white p-4">
           <nav>
             <ul className="space-y-4">
               <li><Link href="/" onClick={toggleMenu}>Home</Link></li>
