@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { Menu, Search, X } from 'lucide-react'
+import { Menu, Search, X, ChevronDown } from 'lucide-react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -41,36 +41,39 @@ export default function Header() {
 
       {/* Desktop Header */}
       <div className="hidden md:block">
-        <div className="bg-white p-4">
+        <div className="bg-white py-8 px-6 flex justify-between items-center">
           <Image
             src="/logo.svg"
             alt="Lungsod ng Quezon Logo"
-            width={100}
-            height={100}
-            className="mx-auto"
+            width={160}
+            height={160}
           />
+          <h1 className="text-5xl font-extrabold">Quezon City Government Human Resources</h1>
+          <Link href="/signin" className="text-2xl mt-6">
+            Sign-in
+          </Link>
         </div>
-        <nav className="bg-[#002165] text-white p-4">
-          <ul className="flex justify-center items-center space-x-6">
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/recruitment">Recruitment</Link></li>
-            <li><Link href="/learning">Learning and Development</Link></li>
-            <li><Link href="/resources">Resources</Link></li>
-            <li><Link href="/faqs">FAQs</Link></li>
-            <li>
-              <form onSubmit={handleSearch} className="flex items-center">
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="px-2 py-2 text-primary rounded-l-md focus:outline-none"
-                />
-                <button type="submit" className="bg-[#0042CB] text-white px-3 py-2 rounded-r-md hover:bg-[#003399] focus:outline-none">
-                  <Search size={24} />
-                </button>
-              </form>
+        <nav className="bg-[#002165] text-white py-6 px-4">
+          <ul className="flex justify-center items-center relative text-2xl">
+            <li className="px-[16.5px]"><Link href="/">Home</Link></li>
+            <li className="px-[16.5px]"><Link href="/about">About Us</Link></li>
+            <li className="flex items-center px-[16.5px]">
+              <Link href="/recruitment">Recruitment</Link>
+              <ChevronDown size={28} className="ml-1" />
+            </li>
+            <li className="flex items-center px-[16.5px]">
+              <Link href="/learning">Learning and Development</Link>
+              <ChevronDown size={28} className="ml-1" />
+            </li>
+            <li className="flex items-center px-[16.5px]">
+              <Link href="/resources">Resources</Link>
+              <ChevronDown size={28} className="ml-1" />
+            </li>
+            <li className="px-[16.5px]"><Link href="/faqs">FAQs</Link></li>
+            <li className="absolute right-[29px]">
+              <button onClick={handleSearch} aria-label="Search">
+                <Search size={32} />
+              </button>
             </li>
           </ul>
         </nav>
