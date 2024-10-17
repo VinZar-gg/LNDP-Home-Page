@@ -1,5 +1,6 @@
 import Header from '../components/header'
 import Hero from '../components/hero'
+import Objective from '../components/objective'
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <Hero />
+        <Objective />
       </main>
     </div>
   )
