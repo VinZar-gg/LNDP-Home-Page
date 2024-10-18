@@ -7,12 +7,12 @@ export default function Objective() {
         <ObjectiveBox
           title="Vision"
           content="To sustain Quezon City as quality community - a progressive and peaceful urban center conducive for living, working, and doing business."
-          iconSrc="/vision.svg"
+          iconSrc="/objective/vision.svg"
         />
         <ObjectiveBox
           title="Mission"
           content="To provide quality service, making Quezon City an ideal community where people live, work and do business in a hospitable, progressive, and peaceful environment."
-          iconSrc="/mission.svg"
+          iconSrc="/objective/mission.svg"
         />
       </div>
     </div>

@@ -68,7 +68,7 @@ function CustomButton({ children, variant = "default", className = "" }: { child
   )
 }
 
-export default function EventComponent() {
+export default function Event() {
   return (
     <div className="w-full bg-[#002165] text-white p-6">
       <div className="max-w-7xl mx-auto">

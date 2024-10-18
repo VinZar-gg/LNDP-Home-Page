@@ -1,13 +1,13 @@
 import Image from 'next/image'
 
 const coreValues = [
-  { name: 'Competence', icon: '/competence.svg' },
-  { name: 'Commitment', icon: '/commitment.svg' },
-  { name: 'Creativity', icon: '/creativity.svg' },
-  { name: 'Cooperation', icon: '/cooperation.svg' },
-  { name: 'Integrity', icon: '/integrity.svg' },
-  { name: 'Caring', icon: '/caring.svg' },
-  { name: 'Political Will', icon: '/political-will.svg' },
+  { name: 'Competence', icon: '/coreValue/competence.svg' },
+  { name: 'Commitment', icon: '/coreValue/commitment.svg' },
+  { name: 'Creativity', icon: '/coreValue/creativity.svg' },
+  { name: 'Cooperation', icon: '/coreValue/cooperation.svg' },
+  { name: 'Integrity', icon: '/coreValue/integrity.svg' },
+  { name: 'Caring', icon: '/coreValue/caring.svg' },
+  { name: 'Political Will', icon: '/coreValue/political-will.svg' },
 ]
 
 export default function CoreValue() {
