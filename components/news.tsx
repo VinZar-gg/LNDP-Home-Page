@@ -1,6 +1,19 @@
 import Image from 'next/image'
 
-const newsItems = [
+interface NewsItem {
+  type: string
+  date: string
+  title: string
+  image: string
+}
+
+interface ThumbnailItem {
+  date: string
+  title: string
+  image: string
+}
+
+const newsItems: NewsItem[] = [
   {
     type: 'ANNOUNCEMENTS',
     date: 'DATE',
@@ -27,7 +40,7 @@ const newsItems = [
   },
 ]
 
-const thumbnailItems = [
+const thumbnailItems: ThumbnailItem[] = [
   { date: 'DATE', title: 'News/Article Title', image: '/news/news01.png' },
   { date: 'DATE', title: 'News/Article Title', image: '/news/news02.png' },
   { date: 'DATE', title: 'News/Article Title', image: '/news/news03.png' },
@@ -100,7 +113,12 @@ export default function News() {
   )
 }
 
-function NewsItem({ item, small = false }) {
+interface NewsItemProps {
+  item: NewsItem
+  small?: boolean
+}
+
+function NewsItem({ item, small = false }: NewsItemProps) {
   return (
     <div className="relative w-full h-full overflow-hidden rounded-lg">
       <Image
@@ -118,7 +136,11 @@ function NewsItem({ item, small = false }) {
   )
 }
 
-function ThumbnailItem({ item }) {
+interface ThumbnailItemProps {
+  item: ThumbnailItem
+}
+
+function ThumbnailItem({ item }: ThumbnailItemProps) {
   return (
     <div className="flex items-center space-x-4">
       <div className="relative w-20 h-20 rounded-lg overflow-hidden">
