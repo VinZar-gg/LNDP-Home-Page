@@ -4,6 +4,7 @@ import Objective from '../components/objective'
 import CoreValue from '../components/coreValue'
 import Event from '../components/event'
 import News from '../components/news'
+import Footer from '../components/footer'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Event />
         <News />
       </main>
+      <Footer />
     </div>
   )
 }
