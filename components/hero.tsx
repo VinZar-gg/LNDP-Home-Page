@@ -7,13 +7,14 @@ export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const totalSlides = 6
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides)
-  }
+  // Comment out the unused functions
+  // const nextSlide = () => {
+  //   setCurrentSlide((prev) => (prev + 1) % totalSlides)
+  // }
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides)
-  }
+  // const prevSlide = () => {
+  //   setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides)
+  // }
 
   return (
     <div className="relative w-full overflow-hidden">
