@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { Menu, Search, X, ChevronDown } from 'lucide-react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -25,7 +24,21 @@ export default function Header() {
       <div className="2xl:hidden bg-[#002165] text-white py-1 px-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <button onClick={toggleMenu} aria-label="Toggle menu" className="p-1">
-            {isMenuOpen ? <X size={40} strokeWidth={2.5} /> : <Menu size={40} strokeWidth={2.5} />}
+            {isMenuOpen ? (
+              <Image
+                src="/header/close.svg"
+                alt="Close menu"
+                width={40}
+                height={40}
+              />
+            ) : (
+              <Image
+                src="/header/menu.svg"
+                alt="Open menu"
+                width={40}
+                height={40}
+              />
+            )}
           </button>
           <Image
             src="/logo.svg"
@@ -34,7 +47,7 @@ export default function Header() {
             height={40}
           />
         </div>
-        <Link href="/signin" className="text-sm">
+        <Link href="/signin" className="text-sm hover:text-gray-300 transition-colors duration-200">
           Sign-in
         </Link>
       </div>
@@ -49,34 +62,11 @@ export default function Header() {
             height={160}
           />
           <h1 className="text-5xl font-extrabold">Quezon City Government Human Resources</h1>
-          <Link href="/signin" className="text-2xl mt-6">
+          <Link href="/signin" className="text-2xl mt-6 hover:text-gray-600 transition-colors duration-200">
             Sign-in
           </Link>
         </div>
-        <nav className="bg-[#002165] text-white py-6 px-4">
-          <ul className="flex justify-center items-center relative text-2xl">
-            <li className="px-[16.5px]"><Link href="/">Home</Link></li>
-            <li className="px-[16.5px]"><Link href="/about">About Us</Link></li>
-            <li className="flex items-center px-[16.5px]">
-              <Link href="/recruitment">Recruitment</Link>
-              <ChevronDown size={28} className="ml-1" />
-            </li>
-            <li className="flex items-center px-[16.5px]">
-              <Link href="/learning">Learning and Development</Link>
-              <ChevronDown size={28} className="ml-1" />
-            </li>
-            <li className="flex items-center px-[16.5px]">
-              <Link href="/resources">Resources</Link>
-              <ChevronDown size={28} className="ml-1" />
-            </li>
-            <li className="px-[16.5px]"><Link href="/faqs">FAQs</Link></li>
-            <li className="absolute right-[29px]">
-              <button onClick={handleSearch} aria-label="Search">
-                <Search size={32} />
-              </button>
-            </li>
-          </ul>
-        </nav>
+        
       </div>
 
       {/* Mobile and Tablet Menu */}
@@ -84,12 +74,12 @@ export default function Header() {
         <div className="2xl:hidden bg-[#002165] text-white p-4">
           <nav>
             <ul className="space-y-4">
-              <li><Link href="/" onClick={toggleMenu}>Home</Link></li>
-              <li><Link href="/about" onClick={toggleMenu}>About Us</Link></li>
-              <li><Link href="/recruitment" onClick={toggleMenu}>Recruitment</Link></li>
-              <li><Link href="/learning" onClick={toggleMenu}>Learning and Development</Link></li>
-              <li><Link href="/resources" onClick={toggleMenu}>Resources</Link></li>
-              <li><Link href="/faqs" onClick={toggleMenu}>FAQs</Link></li>
+              <li><Link href="/" onClick={toggleMenu} className="hover:text-gray-300 transition-colors duration-200">Home</Link></li>
+              <li><Link href="/about" onClick={toggleMenu} className="hover:text-gray-300 transition-colors duration-200">About Us</Link></li>
+              <li><Link href="/recruitment" onClick={toggleMenu} className="hover:text-gray-300 transition-colors duration-200">Recruitment</Link></li>
+              <li><Link href="/learning" onClick={toggleMenu} className="hover:text-gray-300 transition-colors duration-200">Learning and Development</Link></li>
+              <li><Link href="/resources" onClick={toggleMenu} className="hover:text-gray-300 transition-colors duration-200">Resources</Link></li>
+              <li><Link href="/faqs" onClick={toggleMenu} className="hover:text-gray-300 transition-colors duration-200">FAQs</Link></li>
               <li>
                 <form onSubmit={handleSearch} className="flex items-center">
                   <input
@@ -99,8 +89,13 @@ export default function Header() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="px-2 py-2 text-primary rounded-l-md focus:outline-none w-full"
                   />
-                  <button type="submit" className="bg-[#0042CB] text-white px-3 py-2 rounded-r-md hover:bg-[#003399] focus:outline-none">
-                    <Search size={24} />
+                  <button type="submit" className="bg-[#0042CB] text-white px-3 py-2 rounded-r-md hover:bg-[#003399] focus:outline-none transition-colors duration-200">
+                    <Image
+                      src="/header/search.svg"
+                      alt="Search"
+                      width={24}
+                      height={24}
+                    />
                   </button>
                 </form>
               </li>

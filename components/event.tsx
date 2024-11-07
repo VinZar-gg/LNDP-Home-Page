@@ -1,5 +1,3 @@
-import { ChevronLeft, ChevronRight } from "lucide-react"
-
 interface Event {
   date: string
   title: string
@@ -39,16 +37,16 @@ function Pagination() {
   return (
     <div className="flex items-center space-x-2">
       <PaginationButton isNavigation={true}>
-        <ChevronLeft className="h-4 w-4 mr-1" />
-        <span>Previous</span>
+        <span className="text-3xl leading-none">￩</span>
+        <span className="ml-1 text-sm">Previous</span>
       </PaginationButton>
       <PaginationButton isSelected={true}>1</PaginationButton>
       <PaginationButton>2</PaginationButton>
       <span className="text-white mx-1">...</span>
       <PaginationButton>4</PaginationButton>
       <PaginationButton isNavigation={true}>
-        <span>Next</span>
-        <ChevronRight className="h-4 w-4 ml-1" />
+        <span className="text-sm">Next</span>
+        <span className="text-3xl leading-none ml-1">￫</span>
       </PaginationButton>
     </div>
   )

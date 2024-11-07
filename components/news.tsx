@@ -51,11 +51,17 @@ export default function News() {
   return (
     <section className="py-12 px-4 md:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-8">
+        {/* Desktop view */}
+        <div className="hidden md:flex justify-between items-center mb-8">
           <h2 className="text-5xl font-bold">News and Announcements</h2>
-          <button className="hidden md:block px-5 py-2 text-base font-medium text-white bg-[#001E5B] rounded-md hover:bg-[#001E5B]/90 transition-colors duration-300">
+          <button className="px-5 py-2 text-base font-medium text-white bg-[#001E5B] rounded-md hover:bg-[#001E5B]/90 transition-colors duration-300">
             Read More
           </button>
+        </div>
+
+        {/* Mobile view */}
+        <div className="md:hidden text-center mb-6">
+          <h2 className="text-4xl font-bold mb-4">News and Announcements</h2>
         </div>
         
         {/* Desktop Layout */}
